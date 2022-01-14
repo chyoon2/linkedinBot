@@ -39,7 +39,7 @@ class LinkedinEasyApply:
 
     def login(self):
         try:
-            self.browser.get("https://www.linkedin.com/login")
+            self.browser.get("http://www.linkedin.com/login")
             time.sleep(random.uniform(5, 10))
             self.browser.find_element_by_id("username").send_keys(self.email)
             self.browser.find_element_by_id("password").send_keys(self.password)
@@ -725,7 +725,7 @@ class LinkedinEasyApply:
         return extra_search_terms_str
 
     def next_job_page(self, position, location, job_page):
-        self.browser.get("https://www.linkedin.com/jobs/search/" + self.base_search_url +
+        self.browser.get("http://www.linkedin.com/jobs/search/" + self.base_search_url +
                          "&keywords=" + position + location + "&start=" + str(job_page*25))
 
         self.avoid_lock()
